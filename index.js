@@ -91,28 +91,39 @@ function receivedMessage(event) {
       default:
         sendTextMessage(senderID, messageText);
     }
-    var data_string="";
+   
+    
+    var data_string="";//data String to connect recieved json chunks
     var req=https.get( GOOGLE_API+messageText,
   (res) => {
+      
+  //Prints log to console about https response's status and header
   console.log('statusCode:', res.statusCode);
   console.log('headers:', res.headers);
+      
+  //decoder for decoding buffer's data to string
   var decoder = new StringDecoder('utf8');
+      
   res.on('data', (d) => {
     var textChunk = decoder.write(d);
     data_string=data_string+textChunk;
+    //pushes data into 'data_string' to complete the https response's data part
   });
+      
   res.on('end',function(){
       console.log('data received: ', data_string);
-      var json=JSON.parse(data_string);
-      for(var i=0;i<3;i++){
+      var json=JSON.parse(data_string); //parse the JSON to read the needed parts
+      for(var i=0;i<5;i++){
+          //reply 5 times that includes 2 links with snippets.
+          //2 links each, so that it does not exceed the FB messenger's limit (around 640B?)
           sendTextMessage(senderID,
           json.items[2*i].link + "\n"
           + json.items[2*i].snippet + '\n'
           + json.items[2*i+1].link +'\n'
           + json.items[2*i+1].snippet);
       }
-
   })
+      
 
 }).on('error', (e) => {
   console.error(e);
