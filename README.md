@@ -15,8 +15,8 @@ It catches the word recieved by my FB page and queries using Google Search API.
 How-to-use
   1. Get an AWS account, Google Custom Search API and a Facebook Page.
   2. Get a AWS Lambda and connect it to your Facebook page that the page interrupts Lambda when you recieve a message.
-  3. Copy the index.js to your lambda server's code and enter YOUR_VARIABLES to the code.
-  4. Try it out!
+  3. Copy the index.js to your lambda server's code and enter YOUR_VARIABLES to the code.
+  4. Try it out!
   
  * you should know that your google api's daily usage may be limited if you are not paying for it!
 
