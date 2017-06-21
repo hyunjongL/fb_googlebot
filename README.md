@@ -1,12 +1,12 @@
-## googlebot
+# googlebot
 
-# What is it?
+### What is it?
 Its a bot!
 If you send a message to the facebook page you've connected to, you can get the "GOOGLE SEARCHED RESULTS" by message.
 (At this moment)You'll get top10 links and some snippets(short explanations).
 + Based on Node.js, Uses https, fs, string_decoder
 
-# But why not google it?
+### But why not google it?
 There are people who cannot connect to google, but can to facebook.
 So, my AWS lambda serves as a broker!
 It catches the word recieved by my FB page and queries using Google Search API.
@@ -24,7 +24,7 @@ How-to-use
 
 
 
-# Acknowledgements
+### Acknowledgements
 
 Igor Khomenko
 
