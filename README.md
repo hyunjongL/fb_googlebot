@@ -1,5 +1,7 @@
 # googlebot
 
+![example](/images/example.jpeg)
+
 ### What is it?
 Its a bot!
 If you send a message to the facebook page you've connected to, you can get the "GOOGLE SEARCHED RESULTS" by message.
